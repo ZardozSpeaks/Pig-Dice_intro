@@ -19,10 +19,10 @@ describe("movieTicket",function(){
     expect(testTicket.showing()).to.equal("matinee");
     expect(testTicket2.showing2()).to.equal("regular");
   });
+  it("will determine release date of movie", function() {
+    expect(testTicket.firstRelease()).to.equal("firstRelease");
+  });
+  it("will determine ticket cost", function() {
+    expect(testTicket.cost()).to.equal("6.50");
+  });
 });
-
-
-/*movieTitle
-age lees than 12, or over 55
-newrelease or old releaseDate
-matinee or reqular showing*/
