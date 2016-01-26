@@ -1,88 +1,32 @@
-function movieTicket(movieTitle, age, releaseDate, showtime) {
-  this.movieTitle = movieTitle;
-  this.age = age;
-  this.releaseDate = releaseDate;
-  this.showtime = showtime;
-}
+// function movieTicket(movieTitle, age, releaseDate, showtime) {
+//   this.movieTitle = movieTitle;
+//   this.age = age;
+//   this.releaseDate = releaseDate;
+//   this.showtime = showtime;
+// }
 
-var testTicket = new movieTicket("movie1", "11", "firstRelease", "matinee");
-var testTicket2 = new movieTicket("movie1", "55", "newRelease", "regular");
-var testTicket3 = new movieTicket("movie1", "25", "newRelease", "matinee");
-var price = 0;
-
-movieTicket.prototype.ticketType = function () {
-  if (testTicket.age <= 12) {
-    return "childPrice";
-  } else if (testTicket.age >= 55) {
-    return "seniorPrice";
-  } else {
-    return "regularPrice";
-  }
-}
-movieTicket.prototype.ticketType2 = function () {
-  if (testTicket2.age <= 12) {
-    return "childPrice";
-  } else if (testTicket2.age >= 55) {
-    return "seniorPrice";
-  } else {
-    return "regularPrice";
-  }
-}
- movieTicket.prototype.ticketType3 = function () {
-   if (testTicket3.age <= 12) {
-     return "childPrice";
-  } else if (testTicket3.age >= 55) {
-     return "seniorPrice";
-  } else {
-     return "regularPrice";
-  }
- }
-
- movieTicket.prototype.showing = function () {
-  if (testTicket.showtime === "matinee") {
-    return "matinee";
-  } else
-    return "regular";
-  }
-
-  movieTicket.prototype.showing2 = function () {
-   if (testTicket2.showtime === "matinee") {
-     return "matinee";
-   } else
-     return "regular";
-   }
-
-   movieTicket.prototype.firstRelease = function () {
-     if (testTicket.releaseDate === "firstRelease") {
-       return "firstRelease";
-     } else {
-       return "secondRelease";
-     }
-   }
-
-   movieTicket.prototype.cost = function () {
-     if (testTicket.releaseDate === "secondRelease") {
-       return  "6";
-     } else if ((testTicket.age >= 55) && (testTicket.showtime === "matinee")) {
-       return  "8.50";
-     } else if ((testTicket.age >= 55) &&(testTicket.showtime === "regular")) {
-       return  "10.50";
-     } else if (testTicket.age < 12) {
-       return  "6.50";
-     } else if ((testTicket.age > 12) && (testTicket.age < 55) && (testTicket.showtime === "regular")) {
-       return  "13.50";
-     } else {
-       return  "10.50";
-     }
-   }
+$(function() {
+  $("#ticketForm").submit(function(event) {
+    var age = $('input[name=age]:checked', '#ticketForm').val();
+    var movieTime = $('input[name=movieTime]:checked', '#ticketForm').val();
+    var newRelease = $('input[name=release]:checked', '#ticketForm').val();
+    var secondRelease = $('input[name=release]:checked', '#ticketForm').val();
 
 
- // $(document).ready(function() {
- //   if (testTicket.age <= 12) {
- //   return "childPrice";
- //  } else if (testTicket.age >= 55) {
- //     return "seniorPrice";
- //  } else {
- //    return "regularPrice";
- //   }
- // });
+    if (secondRelease === ("secondRelease1" || "secondRelease2")) {
+      $("#appendHere").text("$6");
+    } else if ((age >= 55) && (movieTime === "matinee")) {
+      $("#appendHere").text("$8.50");
+    } else if ((age >= 55) && (movieTime === "evening")) {
+      $("#appendHere").text("$10.50");
+    } else if (age < 12) {
+      $("#appendHere").text("$6.50");
+    } else if ((age > 12) && (age < 55) && (movieTime === "evening")) {
+      $("#appendHere").text("$13.50");
+    } else {
+      $("#appendHere").text("$10.50");
+    }
+
+    event.preventDefault();
+   });
+ });
