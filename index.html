@@ -10,70 +10,50 @@
   </head>
   <body>
     <div class="container">
-      <h1>Ticket Information</h1>
-      <form id="ticketForm">
-        <div class="radio">
-          <p>Select an age:</p>
-          <label>
-            <input type="radio" name="age" id="underAge" value=11>
-            Child under 12
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="age" id="adult" value=25>
-            Adult
-          </label>
-        </div>
-        <div class="radio disabled">
-          <label>
-            <input type="radio" name="age" id="seniorCitizen" value=55>
-            Senior Discount 55 and above
-          </label>
-        </div>
-        <p>What time would you like to go?</p>
-        <div class="radio">
-          <label>
-            <input type="radio" name="movieTime" id="matinee" value="matinee">
-            Matinee
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="movieTime" id="evening" value="evening">
-            Evening
-          </label>
-        </div>
-        <p>New releases</p>
-        <div class="radio disabled">
-          <label>
-            <input type="radio" name="release" id="movieTitleOne" value="newRelease1">
-            Movie 1
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="release" id="movieTitleTwo" value="newRelease2">
-            Movie 2
-          </label>
-        </div>
-        <p>Second releases</p>
-        <div class="radio disabled">
-          <label>
-            <input type="radio" name="release" id="optionOne" value="secondRelease1">
-            Movie 1
-          </label>
-        </div>
-        <div class="radio">
-          <label>
-            <input type="radio" name="release" id="optionTwo" value="secondRelease2">
-            Movie 2
-          </label>
-        </div>
-        <button type="submit" class="btn btn-primary">Primary</button>
+      <div id="playerOneName">Player One:
+      </div>
+      <div id="playerTwoName">Player Two:
+      </div>
+      <form id="playerNames">
+        <fieldset class="form-group">
+          <label for="formGroupExampleInput">Player One:</label>
+          <input type="text" class="form-control" id="playerOne">
+        </fieldset>
+        <fieldset class="form-group">
+          <label for="formGroupExampleInput2">Player Two:</label>
+          <input type="text" class="form-control" id="playerTwo">
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Input Player Names</button>
       </form>
-      <div id="appendHere">
+      <div>
+        <button type="button" id="playerOneRoll" class="btn btn-primary">Player One Roll Dice</button>
+      </div>
+      <div id="diceRollHere">
+      </div>
 
+      <div>
+        <button type="button" id="playerOneBank" class="btn btn-primary">Player One Bank Turn Score</button>
+      </div>
+      <div>
+        <button type="button" id="playerTwoRoll" class="btn btn-primary">Player Two Roll Dice</button>
+      </div>
+      <div>
+        <button type="button" id="playerTwoBank" class="btn btn-primary">Player Two Bank Turn Score</button>
+      </div>
+      <div>
+        <p>Player One Total:<span id="playerOneTotal"></span></p>
+      </div>
+      <div>
+        <p>Player Two Total:<span id="playerTwoTotal"></span></p>
+      </div>
+      <div>
+        <p>Player One Turn Score:<span id="playerOneTurnScore"></span></p>
+      </div>
+      <div>
+        <p>Player Two Turn Score:<span id="playerTwoTurnScore"></span></p>
+      </div>
+      <div>
+        <button type="button" id="newGame" class="btn btn-primary">Start New Game</button>
       </div>
     </div>
   </body>

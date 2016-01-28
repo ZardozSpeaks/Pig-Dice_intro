@@ -1,28 +1,32 @@
-describe("movieTicket",function(){
-  it("initialize object values", function (){
-    var testTicket = new movieTicket("movie1", "21", "newRelease", "matinee");
-    expect(testTicket.movieTitle).to.equal("movie1");
-    expect(testTicket.age).to.equal("21");
-    expect(testTicket.releaseDate).to.equal("newRelease");
-    expect(testTicket.showtime).to.equal("matinee");
+describe('Player', function() {
+  it("returns the player's name", function() {
+    var testPlayer = new Player("Ryan", 0, 0);
+    expect(testPlayer.playerName).to.equal("Ryan");
   });
-  it("will determine if the customer is 12 or younger", function(){
-    expect(testTicket.ticketType()).to.equal("childPrice");
+  it("generates random number for roll", function(){
+    var testPlayer = new Player("Ryan", 0, 0);
+    var turnOne = testPlayer.rollDice();
+    expect("023456").to.include(testPlayer.turnScore);
   });
-  it("will determine if the customer is 55 or older", function(){
-    expect(testTicket2.ticketType2()).to.equal("seniorPrice");
+  it("resets turn score to 0 at the start of each turn", function() {
+    var testPlayer = new Player("Ryan", 0, 0);
+    var turnOne = testPlayer.rollDice();
+    testPlayer.newTurn();
+    expect(testPlayer.turnScore).to.equal(0);
   });
-   it("will determine if the customer is between 12 and 55", function(){
-     expect(testTicket3.ticketType3()).to.equal("regularPrice");
-  });
-  it("will determine time of showing", function(){
-    expect(testTicket.showing()).to.equal("matinee");
-    expect(testTicket2.showing2()).to.equal("regular");
-  });
-  it("will determine release date of movie", function() {
-    expect(testTicket.firstRelease()).to.equal("firstRelease");
-  });
-  it("will determine ticket cost", function() {
-    expect(testTicket.cost()).to.equal("6.50");
+  it("returns players name when they hit 100 or more in their score", function(){
+    var testPlayer = new Player("Ryan", 0, 0);
+    testPlayer.userScore = 100;
+    expect(testPlayer.scoreCheck()).to.equal("Win");
   });
 });
+
+
+/* tests:
+--test to make sure rng is between 1-6
+test dice number rolled
+ -if 1 stop
+test score of the current user
+ -if 100 or greater user wins
+test to make sure computer stops after two rolls
+*/
