@@ -1,0 +1,17 @@
+.jumbotron {
+  font-size: 2em;
+  font-family: monospace;
+  text-transform: uppercase;
+}
+
+.btn {
+  margin: 1% 0;
+}
+
+#newgamediv {
+  margin-top: 15%;
+};
+
+.results p {
+  margin: 50px;
+};

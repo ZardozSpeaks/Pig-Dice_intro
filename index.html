@@ -10,9 +10,11 @@
   </head>
   <body>
     <div class="container">
-      <div id="playerOneName">Player One:
-      </div>
-      <div id="playerTwoName">Player Two:
+      <div class="jumbotron">
+        <div id="playerOneName">Player One:
+        </div>
+        <div id="playerTwoName">Player Two:
+        </div>
       </div>
       <form id="playerNames">
         <fieldset class="form-group">
@@ -25,35 +27,42 @@
         </fieldset>
         <button type="submit" class="btn btn-primary">Input Player Names</button>
       </form>
-      <div>
-        <button type="button" id="playerOneRoll" class="btn btn-primary">Player One Roll Dice</button>
-      </div>
-      <div id="diceRollHere">
-      </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div>
+              <button type="button" id="playerOneRoll" class="btn btn-primary">Player One Roll Dice</button>
+            </div>
+            <div id="diceRollHere">
+            </div>
 
-      <div>
-        <button type="button" id="playerOneBank" class="btn btn-primary">Player One Bank Turn Score</button>
-      </div>
-      <div>
-        <button type="button" id="playerTwoRoll" class="btn btn-primary">Player Two Roll Dice</button>
-      </div>
-      <div>
-        <button type="button" id="playerTwoBank" class="btn btn-primary">Player Two Bank Turn Score</button>
-      </div>
-      <div>
-        <p>Player One Total:<span id="playerOneTotal"></span></p>
-      </div>
-      <div>
-        <p>Player Two Total:<span id="playerTwoTotal"></span></p>
-      </div>
-      <div>
-        <p>Player One Turn Score:<span id="playerOneTurnScore"></span></p>
-      </div>
-      <div>
-        <p>Player Two Turn Score:<span id="playerTwoTurnScore"></span></p>
-      </div>
-      <div>
-        <button type="button" id="newGame" class="btn btn-primary">Start New Game</button>
+            <div>
+              <button type="button" id="playerOneBank" class="btn btn-primary">Player One Bank Turn Score</button>
+            </div>
+            <div>
+              <button type="button" id="playerTwoRoll" class="btn btn-primary">Player Two Roll Dice</button>
+            </div>
+            <div>
+              <button type="button" id="playerTwoBank" class="btn btn-primary">Player Two Bank Turn Score</button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="results">
+              <p>Player One Total:<span id="playerOneTotal"></span></p>
+            </div>
+            <div class="results">
+              <p>Player Two Total:<span id="playerTwoTotal"></span></p>
+            </div>
+            <div class="results">
+              <p>Player One Turn Score:<span id="playerOneTurnScore"></span></p>
+            </div>
+            <div class="results">
+              <p>Player Two Turn Score:<span id="playerTwoTurnScore"></span></p>
+            </div>
+          </div>
+        </div>
+        <div id="newgamediv">
+          <button type="button" id="newGame" class="btn btn-primary">Start New Game</button>
+        </div>
       </div>
     </div>
   </body>

@@ -45,11 +45,13 @@ $(document).ready(function() {
     $("#playerNames").submit(function(event) {
       event.preventDefault();
 
+      $("#playerNames").hide();
+
       var player1 = $("#playerOne").val();
       var player2 = $("#playerTwo").val();
 
-      $("#playerOneName").text(player1);
-      $("#playerTwoName").text(player2);
+      $("#playerOneName").append(player1);
+      $("#playerTwoName").append(player2);
 
       var player1 = new Player(player1, 0, 0);
       var player2 = new Player(player2, 0, 0);
